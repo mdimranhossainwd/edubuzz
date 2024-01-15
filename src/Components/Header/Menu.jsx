@@ -30,6 +30,15 @@ const Menu = () => {
       >
         Services
       </NavLink>
+
+      <NavLink
+        to="/login"
+        className={({ isActive }) =>
+          isActive ? "text-[#E28519]" : "float-right block"
+        }
+      >
+        Login
+      </NavLink>
     </>
   );
 
@@ -56,7 +65,7 @@ const Menu = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-7 z-[1] p-6 gap-2 md:gap-0 shadow bg-base-300 rounded-box w-52"
+              className="menu menu-sm dropdown-content mt-7 z-[1] p-6 md:p-0 gap-2 md:gap-0 shadow bg-base-300 rounded-box w-52"
             >
               {navLink}
             </ul>
