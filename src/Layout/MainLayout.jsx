@@ -1,4 +1,5 @@
 import Banner from "../Components/Banner/Banner";
+import Footer from "../Components/Footer/Footer";
 import Header from "../Components/Header/Header";
 
 const MainLayout = () => {
@@ -6,6 +7,7 @@ const MainLayout = () => {
     <div>
       <Header />
       <Banner />
+      <Footer />
     </div>
   );
 };
