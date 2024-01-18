@@ -1,7 +1,13 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AuthContext } from "../../Authprovider/AuthProvider";
 import Logo from "./Logo";
 
 const Menu = () => {
+  const { user, logout } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logout();
+  };
   const navLink = (
     <>
       <NavLink
@@ -31,14 +37,23 @@ const Menu = () => {
         Services
       </NavLink>
 
-      <NavLink
-        to="/login"
-        className={({ isActive }) =>
-          isActive ? "text-[#E28519]" : "float-right block"
-        }
-      >
-        Login
-      </NavLink>
+      {user?.email ? (
+        <NavLink
+          to="/myassainment"
+          className={({ isActive }) => (isActive ? "text-[#E28519]" : "")}
+        >
+          {" "}
+          My Assainment
+        </NavLink>
+      ) : (
+        <NavLink
+          to="/login"
+          className={({ isActive }) => (isActive ? "text-[#E28519]" : "")}
+        >
+          {" "}
+          Login
+        </NavLink>
+      )}
     </>
   );
 
@@ -109,7 +124,7 @@ const Menu = () => {
           </div>
         </div> */}
 
-        {/* {user?.email ? (
+        {user?.email ? (
           <>
             <div className="navbar-end mr-5 md:mr-0">
               <div className="dropdown dropdown-end">
@@ -137,7 +152,7 @@ const Menu = () => {
           </>
         ) : (
           ""
-        )} */}
+        )}
       </div>
     </div>
   );

@@ -1,8 +1,26 @@
+import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Authprovider/AuthProvider";
 import Button from "../../Common/Button";
 
 const Login = () => {
+  const { login } = useContext(AuthContext);
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    login(email, password)
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+        // navigate(location?.state ? location?.state : "/");
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <>
       <Helmet>
@@ -18,7 +36,7 @@ const Login = () => {
             <div>
               <h3 className="text-4xl text-center font-bold mt-8">Sign In</h3>
             </div>
-            <form className="card-body">
+            <form onSubmit={handleLogin} className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -28,6 +46,7 @@ const Login = () => {
                   placeholder="email"
                   className="input input-bordered"
                   required
+                  name="email"
                 />
               </div>
               <div className="form-control">
@@ -39,6 +58,7 @@ const Login = () => {
                   placeholder="password"
                   className="input input-bordered"
                   required
+                  name="password"
                 />
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
