@@ -1,7 +1,7 @@
 const CommonHeading = ({ heading, colorheading, subparagraph }) => {
   return (
     <>
-      <div className="mt-6">
+      <div className="">
         <h2 className="mb-5 text-4xl text-center text-black font-bold">
           {heading} <span className="text-[#E28519]">{colorheading}</span>
         </h2>

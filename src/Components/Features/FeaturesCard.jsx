@@ -6,9 +6,9 @@ const FeaturesCard = ({ card }) => {
 
   return (
     <div>
-      <div className="relative flex flex-col text-gray-700 bg-white border  bg-clip-border">
+      <div className="relative  flex flex-col text-gray-700 bg-white border  bg-clip-border">
         <div className="relative m-3 overflow-hidden text-gray-700 bg-white bg-clip-border">
-          <img src={img} className="bg-cover  h-[240px]" />
+          <img src={img} className="bg-cover w-full h-[240px]" />
         </div>
         <div className="p-4">
           <div className="flex items-center justify-between mb-2">
@@ -20,7 +20,7 @@ const FeaturesCard = ({ card }) => {
             Price: ${price}
           </p>
         </div>
-        <div className="p-6 pt-0">
+        <div className="p-6 pt-0 overflow-hidden">
           {/* <Link
             // to={`allassainment/${_id}`}
             className="block w-full select-none rounded-lg bg-[#FF3363] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white transition-all hover:scale-105 focus:scale-105 focus:opacity-[0.85] active:scale-100 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
