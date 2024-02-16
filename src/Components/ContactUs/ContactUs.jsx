@@ -11,7 +11,8 @@ const ContactUs = () => {
         <Container>
           <div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center">
             <img
-              src="https://i.ibb.co/pfddp4h/call-customer-phone-support-service-help-abstract-concept-graphic-design-illustration-133260-6390-re.png"
+              className="w-2/3 my-12 md:mb-0 mx-auto"
+              src="https://lawturbo.com/wp-content/uploads/2023/05/Speed-Dial-Race-1280x1041.png"
               alt=""
             />
             <div className="w-full">

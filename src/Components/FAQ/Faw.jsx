@@ -33,7 +33,7 @@ const Faw = () => {
           <div className="collapse collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" checked="checked" />
             <div className="collapse-title text-xl font-medium">
-              About to the our Study HOme
+              About to the our Study Home
             </div>
             <div className="collapse-content">
               <p>
