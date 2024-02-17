@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { IoShareSocial } from "react-icons/io5";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
+import Review from "../Components/review/Review";
 import Container from "../customComponents/Container";
 
 const ViewDetails = () => {
@@ -35,17 +36,14 @@ const ViewDetails = () => {
     <div>
       <Container>
         <div>
-          <a
-            href="#"
-            className="flex flex-col items-center bg-base-300 border md:flex-row p-4 md:p-12"
-          >
+          <div className="flex flex-col items-center bg-base-300 border md:flex-row p-4 md:p-12">
             <img
               className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"
               src={coverImageURL}
               alt=""
             />
             <div className="flex flex-col justify-betwee text-black ml-0 md:ml-12 p-4 leading-normal">
-              <h5 className="mb-2 text-2xl font-bold tracking-tight">
+              <h5 className="mb-2 text-3xl font-semibold tracking-tight">
                 {title}
               </h5>
               <span className="font-bold mb-2 text-[#E28519]">
@@ -63,20 +61,20 @@ const ViewDetails = () => {
                 {" "}
                 <span className="text-[#E28519]">✔</span> In Stock Available
               </p>
-              <p className="mb-3 font-normal ">
+              <p className="mb-3 text-lg font-normal ">
                 Here are the biggest enterprise technology acquisitions of 2021
                 so far, in reverse chronological order.
               </p>
 
               <div className="flex gap-4 font-semibold ">
-                <p className="hover:text-[#E28519]"> ♡ Add to Wishlist</p>
-                <p className="flex items-center gap-3 hover:text-[#E28519]">
+                <Link className="hover:text-[#E28519]"> ♡ Add to Wishlist</Link>
+                <Link className="flex items-center gap-3 hover:text-[#E28519]">
                   {" "}
                   <IoShareSocial /> Add to Wishlist
-                </p>
+                </Link>
               </div>
             </div>
-          </a>
+          </div>
         </div>
 
         {/* <div className="bg-base-200">
@@ -118,7 +116,7 @@ const ViewDetails = () => {
         </div> */}
 
         <div className="bg-base-200 my-12 py-6 px-8">
-          <Tabs>
+          <Tabs className="pb-4">
             <h3 className="text-xl font-semibold mb-4">
               Books Specification & Summary
             </h3>
@@ -130,7 +128,19 @@ const ViewDetails = () => {
 
             <div className="mt-6 mb-5">
               <TabPanel>
-                <p className="text-lg">{description}</p>
+                <p className="text-lg pb-9">{description}</p>
+                <hr />
+                <div>
+                  <h2 className="text-xl mt-5 font-semibold my-4">
+                    Reviews and Rating
+                  </h2>
+
+                  <div>
+                    {reviews?.map((item) => (
+                      <Review key={item._id} item={item}></Review>
+                    ))}
+                  </div>
+                </div>
               </TabPanel>
               <TabPanel>
                 <div className=" overflow-x-auto w-full my-3 sm:rounded-lg">
@@ -238,21 +248,45 @@ const ViewDetails = () => {
                 </div>
               </TabPanel>
               <TabPanel>
-                <div className="w-full ">
-                  <div className="flex text-black  items-center pb-10">
+                <div className=" ">
+                  <div className="md:flex text-black items-center pb-10">
                     <div>
                       <img
-                        className="w-24 h-24 mb-3 rounded-full shadow-lg"
-                        src="/docs/images/people/profile-picture-3.jpg"
+                        className="w-24 h-18 mb-3 rounded-full object-cover shadow-lg"
+                        src="https://media.istockphoto.com/id/1149504274/photo/portrait-of-a-taiwanese-man.webp?b=1&s=170667a&w=0&k=20&c=BbkqzNZTXPHHnYnb0ZMIq3IkWKPQp20v42QfV0lokkY="
                         alt="Bonnie image"
                       />
-                      <h5 className="mb-1 text-xl font-medium ">
-                        Bonnie Green
-                      </h5>
-                      <span className="text-sm">Visual Designer</span>
+                      <div className="text-center w-full">
+                        <h5 className="mb-1 text-xl font-medium ">
+                          Bonnie Green
+                        </h5>
+                        <span className="text-sm">Visual Designer</span>
+                      </div>
                     </div>
-                    <div>
-                      <h2>Hello World</h2>
+                    <div className="pl-0 md:pl-16">
+                      <p>
+                        Let's begin with writing. Writing is a power that
+                        everyone possesses. Whether it's their stories, their
+                        thoughts, or their experiences - everything is worthy of
+                        being written. While writing, we awaken the hidden
+                        talent within us. Perhaps our words can inspire someone,
+                        or maybe we ourselves take a new direction. The
+                        contribution of writers is truly remarkable. They not
+                        only express their thoughts but also inspire society.
+                        Their stories, their poetry, and their written books
+                        present a new world where everyone can explore, learn,
+                        and change. Another important aspect of writing is
+                        "creation." Before writing anything, we think and dream.
+                        A writer provides a new identity through their written
+                        works. They see the world through their perspective.
+                        Through the power of the pen, a person can turn their
+                        dreams into reality. The power to bring change is the
+                        ultimate aspect of action. Action provides us with a new
+                        perspective. When we write, we understand our world. And
+                        when we understand, we can bring change. Action is a
+                        tool that can not only change an individual but also
+                        society.
+                      </p>
                     </div>
                   </div>
                 </div>

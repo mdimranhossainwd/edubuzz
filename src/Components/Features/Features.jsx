@@ -5,7 +5,7 @@ import FeaturesCard from "./FeaturesCard";
 const Features = () => {
   const [item, setIsItem] = useState();
   useEffect(() => {
-    fetch("http://localhost:5000/features")
+    fetch("https://edubuzz-server-side.vercel.app/features")
       .then((res) => res.json())
       .then((data) => setIsItem(data));
   });

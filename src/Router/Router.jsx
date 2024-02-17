@@ -17,7 +17,7 @@ const router = createBrowserRouter([
       {
         path: "/viewdetails/:_id",
         element: <ViewDetails></ViewDetails>,
-        loader: () => fetch(`http://localhost:5000/features/`),
+        loader: () => fetch(`https://edubuzz-server-side.vercel.app/features`),
       },
     ],
   },
