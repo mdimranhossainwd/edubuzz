@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Authprovider/AuthProvider";
 import Button from "../../Common/Button";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleAuthentication } = useContext(AuthContext);
   const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -72,7 +72,9 @@ const Login = () => {
               </div>
               <div className="form-control">
                 {/* <button className="btn btn-primary">Sign With Google</button> */}
-                <Button name="Sign With Google" />
+                <div onClick={googleAuthentication}>
+                  <Button name="Sign With Google" />
+                </div>
               </div>
             </form>
             <div className="text-center text-lg mb-6">

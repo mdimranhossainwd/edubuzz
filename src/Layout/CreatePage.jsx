@@ -1,36 +1,39 @@
+import axios from "axios";
+import toast from "react-hot-toast";
 import CommonHeading from "../Components/Common/CommonHeading";
 
 const CreatePage = () => {
-  //   const createSubmite = async (e) => {
-  //     e.preventDefault();
-  //     const form = e.target;
-  //     const name = form.name.value;
-  //     const marks = form.marks.value;
-  //     const img = form.img.value;
-  //     const select = form.select.value;
-  //     const email = form.email.value;
-  //     const date = form.date.value;
-  //     const details = form.details.value;
+  const createSubmite = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const marks = form.marks.value;
+    const img = form.img.value;
+    const select = form.select.value;
+    const email = form.email.value;
+    const date = form.date.value;
+    const details = form.details.value;
 
-  //     const formAllValue = { name, marks, img, select, email, date, details };
-
-  //     try {
-  //       const response = await axios.post(
-  //         "https://assainment-server.vercel.app/my-assainments",
-  //         formAllValue,
-  //         {
-  //           headers: {
-  //             "Content-Type": "application/json",
-  //           },
-  //         }
-  //       );
-  //       if (response?.data?.acknowledged) {
-  //         toast.success("Successfully toasted!");
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+    const formAllValue = { name, marks, img, select, email, date, details };
+    console.log(formAllValue);
+    try {
+      const response = await axios.post(
+        "https://edubuzz-server-side.vercel.app/createassainment",
+        formAllValue,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (response?.data?.acknowledged) {
+        console.log(response);
+        toast.success("Successfully toasted!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -56,7 +59,7 @@ const CreatePage = () => {
                
               </p> */}
             </div>
-            <form>
+            <form onSubmit={createSubmite}>
               {/* form name and quantity row */}
               <div className="md:flex mb-8">
                 <div className="form-control md:w-1/2">
