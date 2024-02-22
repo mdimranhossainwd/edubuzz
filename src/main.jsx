@@ -9,11 +9,11 @@ import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Toaster />
     <AuthProvider>
       <HelmetProvider>
         <RouterProvider router={router}></RouterProvider>
       </HelmetProvider>
     </AuthProvider>
+    <Toaster />
   </React.StrictMode>
 );

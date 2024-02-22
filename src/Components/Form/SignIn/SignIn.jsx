@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Authprovider/AuthProvider";
 import Button from "../../Common/Button";
 
 const SignIn = () => {
   const { user, googleAuthentication, createUser } = useContext(AuthContext);
-
+  const navigate = useNavigate();
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -20,7 +21,8 @@ const SignIn = () => {
         // handleUpdate(name);
         const user = result.user;
         console.log("created user", user);
-        // navigate(location?.state ? location?.state : "/");
+        toast.success("SignIn Successfully ✔️ !!");
+        navigate("/");
       })
       .catch((error) => console.log(error));
   };

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 import CommonHeading from "../Components/Common/CommonHeading";
 
@@ -28,7 +29,7 @@ const CreatePage = () => {
       );
       if (response?.data?.acknowledged) {
         console.log(response);
-        toast.success("Successfully toasted!");
+        toast.success("Create Assainment SuccessFully");
       }
     } catch (error) {
       console.log(error);
@@ -38,6 +39,9 @@ const CreatePage = () => {
   return (
     <div>
       <div>
+        <Helmet>
+          <title>Edubuzz || Create Page</title>
+        </Helmet>
         <div className="container mx-auto mb-12 mt-6">
           <div className="bg-[#F3F4F8] p-12">
             <div className="text-center pb-3">
