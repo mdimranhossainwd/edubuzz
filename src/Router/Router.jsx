@@ -6,6 +6,7 @@ import CreatePage from "../Layout/CreatePage";
 import HomeLayout from "../Layout/HomeLayout";
 import MainLayout from "../Layout/MainLayout";
 import ViewDetails from "../Layout/ViewDetails";
+import PrivateRoute from "../Private/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +24,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/create",
-        element: <CreatePage />,
+        element: (
+          <PrivateRoute>
+            <CreatePage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/allassainments",
-        element: <AllAssainmentPage />,
+        element: (
+          <PrivateRoute>
+            <AllAssainmentPage />
+          </PrivateRoute>
+        ),
       },
     ],
   },
