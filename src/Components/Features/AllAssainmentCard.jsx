@@ -26,7 +26,7 @@ const AllAssainmentCard = ({ item }) => {
             </p>
             <div className="flex justify-between">
               <Link
-                to={`viewdetails/${_id}`}
+                to={`/updateform/${_id}`}
                 className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#E28519] rounded-lg hover:bg-[#E28519] focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-[#E28519] dark:hover:bg-[#E28519] dark:focus:ring-[#E28519]"
               >
                 Update
