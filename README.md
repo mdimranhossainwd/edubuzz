@@ -5,3 +5,15 @@ EduBuzz is a comprehensive e-learning platform designed to provide personalized 
 
 
 ## 🌐  [EduBuzz](https://edubuzz-learning.web.app/)
+
+
+
+## 🎯 Project Purpose
+
+The objective of EduBuzz is to:
+
+- Offer a flexible and engaging online learning environment.
+- Provide personalized tutoring sessions tailored to individual student needs.
+- Enhance the accessibility of quality education through technology.
+
+---
