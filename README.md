@@ -17,3 +17,14 @@ The objective of EduBuzz is to:
 - Enhance the accessibility of quality education through technology.
 
 ---
+
+
+
+## ✨ Features
+
+- **Interactive Lessons**: Engaging content to keep students motivated and involved.
+- **Progress Tracking**: Monitor student performance and provide feedback.
+- **Responsive Design**: Optimized for various devices, ensuring a seamless experience.
+- **User Authentication**: Secure login system for students and tutors.
+- **Tutor Dashboard**: Tools for tutors to manage sessions and track student progress.
+
