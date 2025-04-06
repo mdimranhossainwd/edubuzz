@@ -52,3 +52,15 @@ The objective of EduBuzz is to:
 ### Deployment
 
 - **Firebase Hosting**: For deploying and hosting the web application.
+
+
+
+## 📦 Packages Used
+
+- `react`: Library for building user interfaces.
+- `react-router-dom`: For handling routing within the application.
+- `tailwindcss`: For styling the components.
+- `vite`: For bundling and serving the project during development.
+- `firebase`: For authentication and hosting services.
+- `express`: Web framework for Node.js.
+- `mongoose`: ODM for MongoDB.
