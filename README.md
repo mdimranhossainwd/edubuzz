@@ -28,3 +28,27 @@ The objective of EduBuzz is to:
 - **User Authentication**: Secure login system for students and tutors.
 - **Tutor Dashboard**: Tools for tutors to manage sessions and track student progress.
 
+
+
+## 🛠️ Technologies Used
+
+### Frontend
+
+- **React.js**: For building dynamic and responsive user interfaces.
+- **Vite**: A fast build tool and development server.
+- **Tailwind CSS**: Utility-first CSS framework for rapid UI development.
+
+### Backend
+
+- **Node.js**: JavaScript runtime for building the server-side application.
+- **Express.js**: Web framework for Node.js to handle routing and middleware.
+- **MongoDB**: NoSQL database for storing user data and course content.
+- **Mongoose**: ODM for MongoDB, facilitating schema modeling.
+
+### Authentication
+
+- **Firebase Authentication**: Secure and reliable user authentication system.
+
+### Deployment
+
+- **Firebase Hosting**: For deploying and hosting the web application.
